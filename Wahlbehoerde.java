@@ -10,7 +10,7 @@ public class Wahlbehoerde {
     }
     private void init(){
         rsa_keys= new RSA_class();
-        
+        System.out.println("test");
     }
     
     public BigInteger getPublicE(){
@@ -19,6 +19,12 @@ public class Wahlbehoerde {
     public BigInteger getPublicN(){
         return rsa_keys.getN();
     }
+    
+    //TEST ONLY
+    public BigInteger getD(){
+        return rsa_keys.getD();
+    }
+    
     public BigInteger blindSignature(BigInteger y){
         t = y.modPow(rsa_keys.getD(), rsa_keys.getN());
 //        System.out.println(t);

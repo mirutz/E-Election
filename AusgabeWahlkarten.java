@@ -25,6 +25,7 @@ public class AusgabeWahlkarten {
             y=buergerMulti.get(i).calculateY(wahlbehoerde.getPublicE(), wahlbehoerde.getPublicN());
             t=wahlbehoerde.blindSignature(y);
             buergerMulti.get(i).calculateZ(t, wahlbehoerde.getPublicN());
+            buergerMulti.get(i).checkZ(wahlbehoerde.getD(), wahlbehoerde.getPublicN());
         }
         
     }

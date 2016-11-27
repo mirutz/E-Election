@@ -33,6 +33,9 @@ public class Buerger {
             }
         }
     }
+    public BigInteger getX(){
+        return x;
+    }
 
     public BigInteger calculateY(BigInteger e_w, BigInteger n_w) {
         y = x.multiply(r.modPow(e_w, n_w)).mod(n_w);
@@ -41,7 +44,14 @@ public class Buerger {
     }
 
     public void calculateZ(BigInteger t, BigInteger n_w) {
-        z = t.multiply(r.mod(n_w).modInverse(n_w));
+        z = t.multiply(r.mod(n_w).modInverse(n_w)).mod(n_w);
+    }
+
+    public void checkZ(BigInteger d, BigInteger n) {
+        System.out.println(z);
+        System.out.println(x.modPow(d, n));
+        System.out.println(z.compareTo(x.modPow(d, n))==0);
+        
     }
 
 }
