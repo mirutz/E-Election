@@ -10,7 +10,7 @@ public class Wahlbehoerde {
     }
     private void init(){
         rsa_keys= new RSA_class();
-        System.out.println("test");
+        
     }
     
     public BigInteger getPublicE(){
