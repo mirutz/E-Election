@@ -19,7 +19,7 @@ public class Mix {
 
     public void empfange(BigInteger[] empfangeneDaten) {
         /**
-         * Das BigInt Array hat hier das Format [e_b, n_b, z]
+         * Das BigInt Array hat hier das Format [e_b, n_b, z verschlüsselt mit nB]
          */
         BigInteger[] loc = new BigInteger[3];
         loc[0] = rsa.decrypt(empfangeneDaten[0]);
@@ -39,7 +39,7 @@ public class Mix {
     public void sende() {
         for(int i=0;i<empfangeneDaten.size();i++){
             waehlerliste.eintragen(empfangeneDaten.get(i));    
-            System.out.println(empfangeneDaten.get(i));
+            
         }
     }
 
